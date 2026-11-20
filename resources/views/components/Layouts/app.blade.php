@@ -11,12 +11,27 @@
 
 </head>
 
-<body>
-    <x-swal-alert />
-    <x-partials.navbar />
+<body x-data="{
+    collapsed: JSON.parse(localStorage.getItem('sidebar') ?? 'false'),
+    mobileOpen: false
+}" x-init="$watch('collapsed', value => localStorage.setItem('sidebar', value))">
 
-    <div class="max-w-7xl mx-auto p-6">
-        {{ $slot }}
+    <x-swal-alert />
+
+    <div class="flex min-h-screen">
+
+        <x-partials.sidebar />
+
+        <div class="flex-1 flex flex-col">
+
+            <x-partials.navbar />
+
+            <main class="p-6">
+                {{ $slot }}
+            </main>
+
+        </div>
+
     </div>
 
 </body>

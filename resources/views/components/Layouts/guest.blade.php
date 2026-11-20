@@ -10,13 +10,16 @@
     <title>{{ $title ?? 'Guest' }}</title>
 </head>
 
-<body class="bg-slate-100">
+<body>
 
-    <div class="min-h-screen flex items-center justify-center">
+    <div class="flex items-center justify-center min-h-screen ">
 
         {{ $slot }}
 
     </div>
+
+
+
 
 </body>
 

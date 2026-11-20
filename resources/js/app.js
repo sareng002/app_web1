@@ -1,5 +1,9 @@
 
+import Alpine from 'alpinejs';
 import Swal from 'sweetalert2';
+
+window.Alpine = Alpine;
+Alpine.start();
 
 window.Swal = Swal;
 
@@ -59,69 +63,88 @@ if (searchInput) {
 
         const products = await response.json();
 
-        let html = '';
-
-products.forEach(product => {
+        let html = ''; products.forEach(product => {
 
     html += `
-        <tr>
+                <tr>
 
-            <td class="border p-2">
-                ${product.id}
-            </td>
+                    <td class="border p-2">
+                        ${product.id}
+                    </td>
 
-            <td class="border p-2">
-                ${product.nama}
-            </td>
+                    <td class="border p-2">
+                        ${product.nama}
+                    </td>
 
-            <td class="border p-2">
-                ${product.harga}
-            </td>
+                    <td class="border p-2">
+                        ${product.harga}
+                    </td>
 
-            <td class="border p-2">
-                ${product.stok}
-            </td>
+                    <td class="border p-2">
+                        ${product.stok}
+                    </td>
 
-            <td class="border p-2">
+                    <td class="border p-2">
+                        ${product.gambar ? `<img src="/storage/${product.gambar}" alt="${product.nama}" class="w-16 h-16 object-cover rounded">` : 'Tidak ada gambar'}
+                    </td>
 
-                <a
-                    href="/products/${product.id}/edit"
-                    class="bg-yellow-500 text-white px-2 py-1 rounded">
+                    <td class="border p-2">
+                        <div class="gap-4 flex">
+                            <a class="w-20 flex p-2 bg-yellow-500 text-white rounded-lg"
+                                href="/products/${product.id}/edit">
 
-                    Edit
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="m17.71 7.29-3-3a.996.996 0 0 0-1.41 0l-11.01 11A1 1 0 0 0 2 16v3c0 .55.45 1 1 1h3c.27 0 .52-.11.71-.29l11-11a.996.996 0 0 0 0-1.41ZM5.59 18H4v-1.59l7.5-7.5 1.59 1.59zm8.91-8.91L12.91 7.5 14 6.41 15.59 8zM11 18h11v2H11z">
+                                    </path>
+                                </svg>
 
-                </a>
+                                <p
+                                    class="align-middle text-center">
+                                    Edit
+                                </p>
 
-                <form
-                    id="delete-form-${product.id}"
-                    action="/products/${product.id}"
-                    method="POST"
-                    style="display:inline">
+                            </a>
 
-                    <input
-                        type="hidden"
-                        name="_token"
-                        value="${document.querySelector('meta[name="csrf-token"]').content}">
+                            <form
+                                id="delete-form-${product.id}"
+                                action="/products/${product.id}"
+                                method="POST"
+                                style="display:inline">
 
-                    <input
-                        type="hidden"
-                        name="_method"
-                        value="DELETE">
+                                    <input
+                                    type="hidden"
+                                    name="_token"
+                                    value="${document.querySelector('meta[name="csrf-token"]').content}">
 
-                    <button
-                        type="button"
-                        onclick="confirmDelete(${product.id})"
-                        class="bg-red-500 text-white px-2 py-1 rounded">
+                                <input
+                                    type="hidden"
+                                    name="_method"
+                                    value="DELETE">
 
-                        Hapus
-
-                    </button>
-
-                </form>
-
-            </td>
-
-        </tr>
+                                <button
+                                    type="button"
+                                    onclick="confirmDelete(${product.id})"
+                                    class="w-20 flex p-2 bg-red-500 text-white rounded-lg">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                            <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                                            <path
+                                                d="M17 6V4c0-1.1-.9-2-2-2H9c-1.1 0-2 .9-2 2v2H2v2h2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8h2V6zM9 4h6v2H9zm9 16H6V8h12z">
+                                            </path>
+                                            <path
+                                                d="M14.29 10.29 12 12.59l-2.29-2.3-1.42 1.42 2.3 2.29-2.3 2.29 1.42 1.42 2.29-2.3 2.29 2.3 1.42-1.42-2.3-2.29 2.3-2.29z">
+                                            </path>
+                                        </svg>
+                                    <p class="align-middle text-center">
+                                        Hapus
+                                    </p>
+                                </button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
     `;
 
 
@@ -131,8 +154,6 @@ console.log(html);
 });
 
 }
-
-
 
 // SweetAlert2
 
@@ -161,7 +182,7 @@ window.confirmDelete = function(id)
 };
 
 
-// pemerosesan
+// pemerosesan galeri banner di halaman home
 document.addEventListener('DOMContentLoaded', function() {
     const galeri = document.getElementById('bannerGaleri');
     const gambarUtama = document.getElementById('gambarUtama');
@@ -171,7 +192,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let currentIndex = 0;
     let intervalId = null;
-    const delayMs = 5000; // ganti gambar setiap 3 detik
+    const delayMs = 5000; // ganti gambar setiap 5 detik
 
     function setActiveSlide(index) {
         currentIndex = ((index % thumbs.length) + thumbs.length) % thumbs.length;

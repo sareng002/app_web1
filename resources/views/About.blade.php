@@ -1,25 +1,27 @@
-<x-layouts.app>
+<x-layouts.app title="About">
 
 
-    <div class="container  mt-2">
-        <h1 class="text-4xl font-bold">
-            About
-        </h1>
-        <div class="flex flex-col md:flex-row gap-4 mt-2">
-            <img src="/storage/products/OV4OBCsdRTmFqIAWbLpNEGay77mUwSIZXIL0aSbu.png"
-                alt="Description of the image flexible" class="w-50 h-96 object-cover rounded-lg mt-2">
-            <img src="/storage/products/OV4OBCsdRTmFqIAWbLpNEGay77mUwSIZXIL0aSbu.png"
-                alt="Description of the image flexible" class="w-50 h-96 object-cover rounded-lg mt-2">
-        </div>
+    <div class="container  mt-2 mb-4 ">
+        <p class="text-4xl font-bold">
+            Tentang Saya
+        </p>
 
-        <p class="font-serif bg-amber-400 p-2 rounded-xl mt-2 flex items-center justify-center">
-            labhic. Veniam ipsum pariatur amet hic harum, similique veritatis doloribus corporis praesentium placeat
-            facilis quas iusto officiis nulla natus error distinctio explicabo culpa, dignissimos eligendi sit
-            voluptatibus eos inventore! Hic mollitia dolore recusandae laborum? Perferendis quia culpa mollitia,
-            assumenda quis, corporis dicta hic ut qui unde fugiat facilis distinctio ullam esse laboriosam, nam
-            voluptatibus vitae. Doloribus qui sed possimus, quas maiores harum tempore pariatur expedita explicabo
-            exercitationem? Ut a ratione magni dolor aliquid vitae fugit quis, aliquam, deserunt labore veritatis modi
-            veniam non quia expedita, et dicta iure?
+        <img src="/storage/profil_1.jpg" alt="Description of the image flexible"
+            class="w-36 h-36 object-cover rounded-full mt-8 flex justify-center mx-auto">
+        <p class="text-justify leading-relaxed font-arial text-xl p-2 rounded-xl mt-2 flex justify-center ">
+            Assalamu'alaikum, saya Sutiyoso. Seorang freelancer yang bergerak di bidang pengembangan web dan desain
+            grafis. Website ini saya gunakan untuk berbagi informasi, dokumentasi proyek, serta portofolio hasil
+            karya yang telah saya kerjakan.
+
+        <ul class="leading-relaxed font-arial text-sm italic lowercase">
+            <li>Spesialisasi : </li>
+            <li>• Laravel </li>
+            <li>• PHP </li>
+            <li>• MySQL </li>
+            <li>• Editing Gambar </li>
+            <li>• Desain Grafis </li>
+            <li>• MS Office </li>
+        </ul>
         </p>
 
     </div>

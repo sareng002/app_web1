@@ -1,11 +1,22 @@
-<nav class="bg-slate-800 text-white shadow-lg">
+<nav class="bg-slate-800 text-white shadow-lg sticky top-0 z-50">
     <div class="flex items-center justify-between h-18 px-8">
 
         <!-- Logo -->
-        <a href="/" class="text-2xl font-bold flex p-2 items-center gap-4">
-            <x-icon.menu class="flex items-center" />
-            AppWeb
-        </a>
+        <div class="flex items-center justify-between px-6 py-4">
+
+            <div class="flex items-center gap-4">
+
+                <button @click="mobileOpen = true" class="md:hidden">
+                    <x-icon.menu />
+                </button>
+
+                <span class="text-2xl font-bold">
+                    AppWeb
+                </span>
+
+            </div>
+
+        </div>
 
         <!-- Menu -->
         <div class="flex items-center gap-10 text-lg">

@@ -11,6 +11,7 @@ Route::get('/', [Homecontroller::class, 'tampilgambar']);
 Route::resource('products', ProductController::class);
 
 Route::view('/about', 'About');
+
 Route::view('/login', 'Login');
 
 Route::get('/ajax-search', [ProductController::class, 'ajaxSearch']);
