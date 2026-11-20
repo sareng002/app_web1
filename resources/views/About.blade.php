@@ -5,9 +5,14 @@
         <h1 class="text-4xl font-bold">
             About
         </h1>
-        <p clasorum labore praesentium iste mollitia quod delectus, ex voluptates aliquam explicabo quo. Ipsam, aperiam
-            debitis at sunt odit doloribus iste sint eaque alias blanditiis nisi tempora atque unde quos a officiis
-            quaerat nesciunt facilis iusto illo beatae cum dolore s="font-serif bg-amber-400 p-2 rounded-xl mt-2">
+        <div class="flex flex-col md:flex-row gap-4 mt-2">
+            <img src="/storage/products/OV4OBCsdRTmFqIAWbLpNEGay77mUwSIZXIL0aSbu.png"
+                alt="Description of the image flexible" class="w-50 h-96 object-cover rounded-lg mt-2">
+            <img src="/storage/products/OV4OBCsdRTmFqIAWbLpNEGay77mUwSIZXIL0aSbu.png"
+                alt="Description of the image flexible" class="w-50 h-96 object-cover rounded-lg mt-2">
+        </div>
+
+        <p class="font-serif bg-amber-400 p-2 rounded-xl mt-2 flex items-center justify-center">
             labhic. Veniam ipsum pariatur amet hic harum, similique veritatis doloribus corporis praesentium placeat
             facilis quas iusto officiis nulla natus error distinctio explicabo culpa, dignissimos eligendi sit
             voluptatibus eos inventore! Hic mollitia dolore recusandae laborum? Perferendis quia culpa mollitia,
